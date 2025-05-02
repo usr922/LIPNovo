@@ -1,0 +1,91 @@
+# Random seed to ensure reproducible results.
+random_seed: 454
+
+# Spectrum processing options.
+n_peaks: 150
+min_mz: 50.52564895  # 1.0005079 * 50.5
+max_mz: 2500.0
+min_intensity: 0.01
+remove_precursor_tol: 2.0  # Da
+max_charge: 10
+precursor_mass_tol: 50  # ppm
+isotope_error_range: [0, 1]
+
+
+# dataloader
+n_workers: 64
+
+# training params
+warmup_iters: 100_000
+max_iters: 300_000
+num_sanity_val_steps: 0
+
+# all re-trained models and our models are validated every 3k iterations
+val_check_interval: 3000  
+check_val_every_n_epoch:
+
+learning_rate: 5e-4
+weight_decay: 1e-5
+max_epochs: 30
+
+train_batch_size: 32
+
+save_weights_only: True
+model_save_folder_path: "ckpt_save_path"
+logger_save_path: "log_save_path"
+
+
+# Inference options.
+predict_batch_size: 256
+
+# don't change this
+devices: 1
+
+# checkpointing options.
+save_top_k: 1
+
+# Model architecture options.
+impnovo:
+  dim_model: 512
+  n_head: 8
+  dim_feedforward: 1024
+  accelerator: "auto"
+  n_layers: 9
+  dropout: 0
+  dim_intensity: 
+  max_length: 100
+  min_peptide_len: 6
+  train_label_smoothing: 0.01
+  calculate_precision: False
+  residues:
+    "G": 57.021464
+    "A": 71.037114
+    "S": 87.032028
+    "P": 97.052764
+    "V": 99.068414
+    "T": 101.047670
+    "C(+57.02)": 160.030649
+    # "C": 160.030649 # V1
+    "L": 113.084064
+    "I": 113.084064
+    "N": 114.042927
+    "D": 115.026943
+    "Q": 128.058578
+    "K": 128.094963
+    "E": 129.042593
+    "M": 131.040485
+    "H": 137.058912
+    "F": 147.068414
+    "R": 156.101111
+    "Y": 163.063329
+    "W": 186.079313
+    "M(+15.99)": 147.035400
+    "N(+.98)": 115.026943
+    "Q(+.98)": 129.042594
+  n_beams: 5
+  top_match: 1
+  # Params for imputation module
+  gen_num: 100 # the imputation module generates a maximum of 100 peak embeddings
+  gen_enc_layers: 0  # imputation module, we did not use additional encoder layers
+  gen_dec_layers: 3  # imputation module, we use 3 decoder layers
+  gen_threshold: 0.8 # filter threshold

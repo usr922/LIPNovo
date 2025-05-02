@@ -1,0 +1,16 @@
+depthcharge_ms==0.2.3
+einops==0.8.1
+jiwer==3.1.0
+lightning==2.1.4
+matchms==0.28.2
+natsort==8.4.0
+numpy==1.24.3
+pandas==2.2.3
+polars==1.29.0
+PyYAML==6.0.1
+PyYAML==6.0.2
+scikit_learn==1.3.2
+scipy==1.15.2
+spectrum_utils==0.4.2
+torch==2.5.0
+tqdm==4.66.5
