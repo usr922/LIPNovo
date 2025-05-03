@@ -14,8 +14,9 @@ The Pytorch implementation of _Latent Imputation before Prediction: A New Comput
 ```
 conda create -n lipnovo python==3.10 
 conda activate lipnovo
-pip install -r requriements.txt
+git clone https://github.com/usr922/LIPNovo.git
 cd LIPNovo
+pip install -r requriements.txt
 ```
 
 
@@ -67,7 +68,7 @@ python get_result.py
 
 ### Pretrained Models
 
-Our pre-trained models will be uploaded later.
+TODO: Our pre-trained models will be uploaded later.
 
 
 
