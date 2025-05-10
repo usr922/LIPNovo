@@ -4,7 +4,7 @@
 
 The Pytorch implementation of _Latent Imputation before Prediction: A New Computational Paradigm for De Novo Peptide Sequencing._
 
-[[arXiv]](TD) 
+[[arXiv]](TODO) 
 
 >De novo peptide sequencing is a fundamental computational technique for ascertaining amino acid sequences of peptides directly from tandem mass spectrometry data, eliminating the need for reference databases. Cutting-edge models usually encode the observed mass spectra into latent representations from which peptides are predicted autoregressively. However, the issue of missing fragmentation, attributable to factors such as suboptimal fragmentation efficiency and instrumental constraints, presents a formidable challenge in practical applications. To tackle this obstacle, we propose a novel computational paradigm called Latent Imputation before Prediction (LIPNovo). LIPNovo is devised to compensate for missing fragmentation information within observed spectra before executing the final peptide prediction. Rather than generating raw missing data, LIPNovo performs imputation in the latent space, guided by the theoretical peak profile of the target peptide sequence. The imputation process is conceptualized as a set-prediction problem, utilizing a set of learnable peak queries to reason about the relationships among observed peaks and directly generate the latent representations of theoretical peaks through optimal bipartite matching. In this way, LIPNovo manages to supplement missing information during inference and thus boosts performance. Despite its simplicity, experiments on three benchmark datasets show that LIPNovo outperforms state-of-the-art methods by large margins.
 >![image-20250503130932358](image.png)
@@ -16,7 +16,7 @@ conda create -n lipnovo python==3.10
 conda activate lipnovo
 git clone https://github.com/usr922/LIPNovo.git
 cd LIPNovo
-pip install -r requriements.txt
+pip install -r requirements.txt
 ```
 
 
@@ -86,3 +86,7 @@ We sincerely thank Dr. [Jingbo Zhou](https://arxiv.org/search/q-bio?searchtype=a
   year={2025}
 }
 ```
+
+## Contact
+
+Welcome cooperation :), please contact duyee.du (at) connect (dot) polyu (dot) hk
